@@ -111,7 +111,7 @@ void UCSCWiggleTrackWriter::process(const Wiggle& wiggle) {
             if (sp < ep) {
                 ++sp;
                 fprintf(fo, "fixedStep chrom=%s start=%d step=1\n", wiggle.name.c_str(), sp + 1);
-                for (int j = sp; j <= ep; j++) fprintf(fo, "%.2f\n", wiggle.read_depth[j]);
+                for (int j = sp; j <= ep; j++) fprintf(fo, "%f\n", wiggle.read_depth[j]);
             }
             sp = i;
         }
@@ -119,7 +119,7 @@ void UCSCWiggleTrackWriter::process(const Wiggle& wiggle) {
     if (sp < ep) {
         ++sp;
         fprintf(fo, "fixedStep chrom=%s start=%d step=1\n", wiggle.name.c_str(), sp + 1);
-        for (int j = sp; j <= ep; j++) fprintf(fo, "%.2f\n", wiggle.read_depth[j]);
+        for (int j = sp; j <= ep; j++) fprintf(fo, "%f\n", wiggle.read_depth[j]);
     }
 }
 
